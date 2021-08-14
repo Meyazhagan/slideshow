@@ -2,6 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(232, 8, 8);
+  background: linear-gradient(
+    45deg,
+    rgba(232, 8, 8, 1) 0%,
+    rgba(151, 7, 7, 1) 33%,
+    rgba(0, 91, 255, 1) 93%
+  );
 }
 .main-container {
   height: 100vh;
@@ -15,12 +22,13 @@ body {
   width: 600px;
   height: 400px;
   border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 0 15px gray;
 }
 
 .image {
   border-radius: 1rem;
+  user-select: none;
 }
 .slide {
   position: absolute;
@@ -29,27 +37,32 @@ body {
 .prev,
 .next {
   position: absolute;
-  top: 0;
+  top: 45%;
   margin-top: -20px;
-  padding: 30% 1rem;
-  color: grey;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 3rem;
   cursor: pointer;
   user-select: none;
   font-weight: lighter;
+  padding: 1rem;
+  border-radius: 5px;
   width: auto;
 }
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 2s;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
 }
 .prev {
   left: 0px;
+  /* color: blue; */
 }
 
 .next {
   right: 0px;
+  /* color: red; */
 }
 
 .animate-left {
@@ -60,11 +73,9 @@ body {
 @keyframes left {
   from {
     left: 100%;
-    width: 0%;
   }
   to {
     left: 0%;
-    width: 100%;
   }
 }
 

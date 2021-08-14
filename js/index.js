@@ -14,7 +14,7 @@ function createImages() {
   imageContainer.addEventListener("mouseover", pause);
   imageContainer.addEventListener("mouseout", resume);
   for (let i = 684; i < 697; i++) {
-    imageContainer.innerHTML += `<div class="slide">
+    imageContainer.innerHTML += `<div class="slide" style="display:none;">
     <img class="image" src="https://picsum.photos/id/${i}/600/400" alt="">
     </div>
   `;
@@ -60,7 +60,7 @@ function update(n) {
   if (current >= slides.length) current = 0;
   if (current < 0) current = slides.length - 1;
 
-  if (n == 1) slides[current].className = "slide animate-left";
-  if (n == -1) slides[current].className = "slide animate-right";
+  if (n == 1) slides[current].className = "slide animate-right";
+  if (n == -1) slides[current].className = "slide animate-left";
   slides[current].style.display = "block";
 }
